@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TMdbEasy.TmdbObjects;
+﻿using System.Threading.Tasks;
 using TMdbEasy.TmdbObjects.Collection;
 using TMdbEasy.TmdbObjects.Images;
 
