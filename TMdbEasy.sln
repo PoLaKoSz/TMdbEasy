@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMdbEasy", "TMdbEasy\TMdbEasy.csproj", "{A2C67861-1839-4BE1-8674-1E8DA564E5A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMdbEasy", "src\TMdbEasy\TMdbEasy.csproj", "{A2C67861-1839-4BE1-8674-1E8DA564E5A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMdbEasy Tests", "TMdbEasy Tests\TMdbEasy Tests.csproj", "{B137D72D-9557-4D8F-A25E-27890483F885}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9B1F4864-321D-4C45-B623-74DD3414131B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration", "tests\Integration\Integration.csproj", "{B137D72D-9557-4D8F-A25E-27890483F885}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B137D72D-9557-4D8F-A25E-27890483F885} = {9B1F4864-321D-4C45-B623-74DD3414131B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3359E8F6-50FF-494F-8092-4AA1303DA2DF}
