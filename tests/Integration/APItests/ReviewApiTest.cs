@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using TMdbEasy.ApiInterfaces;
+using TMdbEasy.EndPoints;
 using SUT = TMdbEasy;
 
 namespace TMdbEasy_Tests.APItests
@@ -18,6 +19,13 @@ namespace TMdbEasy_Tests.APItests
                 var d = Constants.SecureTestClient.GetApi<IReviewApi>().Value;
 
                 Assert.Throws<AggregateException>(() => { SUT.TmdbObjects.Other.Reviews cr = d.GetDetailsAsync(id).Result; });
+            }
+
+            [Test]
+            public void TestTest()
+            {
+                IReviewsEndPoint endPoint = new ReviewsEndPoint();
+                var asd = endPoint.WithID(10);
             }
         }
     }
