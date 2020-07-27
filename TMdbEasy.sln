@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TmdbEasy-old", "src-old\TmdbEasy-old.csproj", "{A2C67861-1839-4BE1-8674-1E8DA564E5A9}"	
-EndProject	
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TmdbEasy-old.Tests", "tests-old\TmdbEasy-old.Tests.csproj", "{B137D72D-9557-4D8F-A25E-27890483F885}"	
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TmdbEasy-old", "src-old\TmdbEasy-old.csproj", "{A2C67861-1839-4BE1-8674-1E8DA564E5A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TmdbEasy-old.Tests", "tests-old\TmdbEasy-old.Tests.csproj", "{B137D72D-9557-4D8F-A25E-27890483F885}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TmdbEasy", "TmdbEasy\TmdbEasy.csproj", "{1EA74703-7EAD-4702-BEBA-4C6C47401C42}"
 EndProject
