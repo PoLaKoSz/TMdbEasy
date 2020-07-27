@@ -4,7 +4,7 @@ using TmdbEasy.DTO.Companies;
 
 namespace TmdbEasy.Interfaces
 {
-    public interface ICompaniesApi : IBaseApi
+    public interface ICompaniesApi
     {
         /// <summary>
         /// Get a companies details by id.

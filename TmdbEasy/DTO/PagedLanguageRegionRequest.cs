@@ -1,6 +1,6 @@
 ﻿namespace TmdbEasy.DTO
 {
-    public class PagedLanguageRegionRequest : BaseRequest
+    public class PagedLanguageRegionRequest
     {
         public string Region { get; set; } = "US";
         public string Language { get; set; } = "en";

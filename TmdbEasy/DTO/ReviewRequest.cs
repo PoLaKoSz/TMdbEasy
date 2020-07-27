@@ -1,6 +1,6 @@
 ﻿namespace TmdbEasy.DTO
 {
-    public class ReviewRequest : BaseRequest
+    public class ReviewRequest
     {
         /// <summary>
         /// Required parameter

@@ -1,6 +1,6 @@
 ﻿namespace TmdbEasy.DTO
 {
-    public class SeasonRequest : BaseRequest
+    public class SeasonRequest
     {
         public int Id { get; set; }
         public int SeasonNumber { get; set; }

@@ -16,15 +16,12 @@ namespace TMdbEasy.Integration.Tests.v3
         [Test]
         public async Task GetChangeListAsync_SpecificDateRange_ReturnsChangeList()
         {
-            ITmdbEasyClient client = GetTestV3Client();
-
-            string userApiKey = GetApiKey();
+            ITmdbEasyClient client = GetTestV3Client(GetApiKey());
 
             IChangesApi serviceUnderTest = new ChangesApi(client);
 
             var request = new ChangeListRequest()
             {
-                UserApiKey = userApiKey,
                 Start_date = "25/07/2020",
                 End_date = "26/07/2020"
             };
@@ -38,15 +35,12 @@ namespace TMdbEasy.Integration.Tests.v3
         [Test]
         public async Task GetChangeListAsync_SpecificType_ReturnsChangeList()
         {
-            ITmdbEasyClient client = GetTestV3Client();
-
-            string userApiKey = GetApiKey();
+            ITmdbEasyClient client = GetTestV3Client(GetApiKey());
 
             IChangesApi serviceUnderTest = new ChangesApi(client);
 
             var request = new ChangeListRequest()
             {
-                UserApiKey = userApiKey,
                 Start_date = "25/07/2020",
                 End_date = "26/07/2020",
                 Type = ChangeType.TV

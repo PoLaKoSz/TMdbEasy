@@ -7,16 +7,20 @@ using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Apis
 {
-    public class ChangesApi : BaseApi, IChangesApi
+    public class ChangesApi : IChangesApi
     {
-        public ChangesApi(ITmdbEasyClient client) : base(client) { }
+        private readonly ITmdbEasyClient _client;
+
+        public ChangesApi(ITmdbEasyClient client)
+        {
+            this._client = client;
+        }
 
         public async Task<ChangeList> GetChangeListAsync(ChangeListRequest changeListRequest)
         {
             string queryString = new StringBuilder()
             .Append(changeListRequest.Type.ToString().ToLower())
-            .Append("/changes?api_key=")
-            .Append(GetApiKey(changeListRequest.UserApiKey))
+            .Append("/changes?")
             .AppendEndDate(changeListRequest.End_date)
             .AppendStartDate(changeListRequest.Start_date)
             .Append($"&page={changeListRequest.Page}")

@@ -4,7 +4,7 @@ using TmdbEasy.DTO.Other;
 
 namespace TmdbEasy.Interfaces
 {
-    public interface ICreditApi : IBaseApi
+    public interface ICreditApi
     {
         /// <summary>
         /// Get a movie or TV credit details by id.

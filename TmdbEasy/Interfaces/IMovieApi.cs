@@ -9,7 +9,7 @@ using TmdbEasy.DTO.Reviews;
 
 namespace TmdbEasy.Interfaces
 {
-    public interface IMovieApi : IBaseApi
+    public interface IMovieApi
     {
         /// <summary>
         /// Gets all the information about a specific movie.

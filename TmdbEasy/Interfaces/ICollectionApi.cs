@@ -5,7 +5,7 @@ using TmdbEasy.DTO.Other;
 
 namespace TmdbEasy.Interfaces
 {
-    public interface ICollectionApi : IBaseApi
+    public interface ICollectionApi
     {
         /// <summary>
         /// Get collection details by id.

@@ -4,7 +4,7 @@ using TmdbEasy.DTO.Other;
 
 namespace TmdbEasy.Interfaces
 {
-    public interface INetworksApi : IBaseApi
+    public interface INetworksApi
     {
         /// <summary>
         /// Get the details of a network.

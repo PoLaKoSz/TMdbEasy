@@ -2,7 +2,7 @@
 
 namespace TmdbEasy.DTO
 {
-    public class ChangeListRequest : BaseRequest
+    public class ChangeListRequest
     {
         public string End_date { get; set; }
         public string Start_date { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace TmdbEasy.DTO
 {
-    public class PagedIdDateRequest : BaseRequest
+    public class PagedIdDateRequest
     {
         public int Id { get; set; }
         public string End_date { get; set; }

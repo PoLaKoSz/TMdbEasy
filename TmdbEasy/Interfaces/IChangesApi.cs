@@ -4,7 +4,7 @@ using TmdbEasy.DTO;
 
 namespace TmdbEasy.Interfaces
 {
-    public interface IChangesApi : IBaseApi
+    public interface IChangesApi
     {
         Task<ChangeList> GetChangeListAsync(ChangeListRequest changeListRequest);
     }

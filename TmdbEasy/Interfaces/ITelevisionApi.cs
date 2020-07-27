@@ -12,7 +12,7 @@ using TmdbEasy.DTO.TV;
 
 namespace TmdbEasy.Interfaces
 {
-    public interface ITelevisionApi : IBaseApi
+    public interface ITelevisionApi
     {
         /// <summary>
         /// Gets all the information about a specific TV show.

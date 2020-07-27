@@ -51,19 +51,23 @@ namespace TmdbEasy.Tests
         }
 
         [Test]
-        [TestCase("asdjhfbakjsdhb")]
-        [TestCase("")]
         [TestCase(null)]
-        public void OptionsWithApiKey_SetsAndGetsApiKey(string apikey)
+        [TestCase("")]
+        public void OptionsWithInvalidApiKey_Throws_ArgumentNullException(string apiKey)
         {
             var options = new TmdbEasyOptions()
             {
-                ApiKey = apikey
+                ApiKey = apiKey
             };
 
             var client = new TmdbEasyClientv3(_jsonDeserializer, options);
 
-            Assert.AreEqual(options.ApiKey, client.GetApiKey());
+            var exception = Assert.ThrowsAsync<ArgumentException>(async () => await client.GetResponseAsync<FakeModel>("/fakeURL"));
+            Assert.That(exception.Message, Is.EqualTo("A valid API key is required in order to make requests to the TMDB API!"));
+        }
+
+        private class FakeModel
+        {
         }
     }
 }

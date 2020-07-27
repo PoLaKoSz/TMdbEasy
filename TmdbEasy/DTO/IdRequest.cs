@@ -1,6 +1,6 @@
 ﻿namespace TmdbEasy.DTO
 {
-    public class IdRequest : BaseRequest
+    public class IdRequest
     {
         /// <summary>
         /// Required parameter

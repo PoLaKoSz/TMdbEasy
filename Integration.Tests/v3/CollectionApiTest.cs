@@ -14,12 +14,10 @@ namespace TmdbEasy.Integration.Tests.v3
     public class CollectionApiTest : TestBaseForV3
     {
         private readonly ITmdbEasyClient _client;
-        private readonly string _userApiKey;
 
         public CollectionApiTest()
         {
-            _client = GetTestV3Client();
-            _userApiKey = GetApiKey();
+            _client = GetTestV3Client(GetApiKey());
         }
 
         [TestCase(10)]
@@ -29,7 +27,6 @@ namespace TmdbEasy.Integration.Tests.v3
 
             var request = new IdRequest()
             {
-                UserApiKey = _userApiKey,
                 Id = id
             };
 
@@ -47,7 +44,6 @@ namespace TmdbEasy.Integration.Tests.v3
 
             var request = new IdRequest()
             {
-                UserApiKey = _userApiKey,
                 Id = id
             };
 
