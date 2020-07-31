@@ -8,9 +8,9 @@ namespace TmdbEasy.Apis
 {
     internal class ChangesApi : IChangesApi
     {
-        private readonly IRequestHandler _requestHandler;
+        private readonly RequestHandler _requestHandler;
 
-        public ChangesApi(IRequestHandler requestHandler)
+        internal ChangesApi(RequestHandler requestHandler)
         {
             _requestHandler = requestHandler;
         }

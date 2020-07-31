@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
-using TmdbEasy.Apis;
 using TmdbEasy.DTO.Reviews;
 using TmdbEasy.Tests.Integration.TestFixtures;
 using TmdbEasy.Interfaces;
@@ -14,11 +13,9 @@ namespace TmdbEasy.Tests.Integration
         [TestCase("5488c29bc3a3686f4a00004a")]
         public async Task GetDetailsAsync_WithUserApiKey_ExistingId_ReturnsReview(string reviewId)
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
             string userApiKey = GetApiKey();
 
-            IReviewApi apiUnderTest = new ReviewApi(_requestHandler);
+            IReviewApi apiUnderTest = _clientWithApiKey.Review;
 
             Review result = await apiUnderTest.GetReviewDetailsAsync(reviewId, userApiKey);
 
@@ -31,13 +28,9 @@ namespace TmdbEasy.Tests.Integration
         {
             string sharedApiKey = GetApiKey();
 
-            ITmdbEasyClient client = GetTestV3Client(sharedApiKey);
+            IReviewApi apiUnderTest = _clientWithNoApiKey.Review;
 
-            var _requestHandler = new RequestHandler(client);
-
-            IReviewApi apiUnderTest = new ReviewApi(_requestHandler);
-
-            Review result = await apiUnderTest.GetReviewDetailsAsync(reviewId);
+            Review result = await apiUnderTest.GetReviewDetailsAsync(reviewId, sharedApiKey);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(reviewId, result.Id);

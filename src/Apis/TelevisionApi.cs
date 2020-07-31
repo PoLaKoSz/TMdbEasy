@@ -13,11 +13,11 @@ using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Apis
 {
-    public class TelevisionApi : ITelevisionApi
+    internal class TelevisionApi : ITelevisionApi
     {
-        private readonly IRequestHandler _requestHandler;
+        private readonly RequestHandler _requestHandler;
 
-        public TelevisionApi(IRequestHandler requestHandler)
+        internal TelevisionApi(RequestHandler requestHandler)
         {
             _requestHandler = requestHandler;
         }

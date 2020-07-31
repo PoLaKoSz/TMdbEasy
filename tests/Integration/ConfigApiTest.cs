@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TmdbEasy.Apis;
 using TmdbEasy.DTO.Configuration;
 using TmdbEasy.Tests.Integration.TestFixtures;
 using TmdbEasy.Interfaces;
@@ -16,9 +15,7 @@ namespace TmdbEasy.Tests.Integration
         [Test]
         public async Task GetConfigurationAsync_ReturnsConfiguration()
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IConfigApi apiUnderTest = new ConfigApi(_requestHandler);
+            IConfigApi apiUnderTest = _clientWithNoApiKey.Config;
 
             Configuration configuration = await apiUnderTest.GetConfigurationAsync(_userApiKey);
 
@@ -30,9 +27,7 @@ namespace TmdbEasy.Tests.Integration
         [Test]
         public async Task GetCountriesAsync_SpecificType_ReturnsChangeList()
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IConfigApi serviceUnderTest = new ConfigApi(_requestHandler);
+            IConfigApi serviceUnderTest = _clientWithNoApiKey.Config;
 
             List<Country> countries = await serviceUnderTest.GetCountriesAsync(_userApiKey);
 
@@ -42,9 +37,7 @@ namespace TmdbEasy.Tests.Integration
         [Test]
         public async Task GetJobsAsync_SpecificType_ReturnsChangeList()
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IConfigApi serviceUnderTest = new ConfigApi(_requestHandler);
+            IConfigApi serviceUnderTest = _clientWithNoApiKey.Config;
 
             List<JobsByDepartment> jobs = await serviceUnderTest.GetJobsAsync(_userApiKey);
 
@@ -55,9 +48,7 @@ namespace TmdbEasy.Tests.Integration
         [Test]
         public async Task GetLanguagesAsync_SpecificType_ReturnsChangeList()
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IConfigApi serviceUnderTest = new ConfigApi(_requestHandler);
+            IConfigApi serviceUnderTest = _clientWithNoApiKey.Config;
 
             List<Language> languages = await serviceUnderTest.GetLanguagesAsync(_userApiKey);
 
@@ -67,9 +58,7 @@ namespace TmdbEasy.Tests.Integration
         [Test]
         public async Task GetTimeZonesAsync_SpecificType_ReturnsChangeList()
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IConfigApi serviceUnderTest = new ConfigApi(_requestHandler);
+            IConfigApi serviceUnderTest = _clientWithNoApiKey.Config;
 
             List<TimeZones> timeZones = await serviceUnderTest.GetTimeZonesAsync(_userApiKey);
 

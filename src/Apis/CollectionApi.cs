@@ -5,11 +5,11 @@ using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Apis
 {
-    public class CollectionApi : ICollectionApi
+    internal class CollectionApi : ICollectionApi
     {
-        private readonly IRequestHandler _requestHandler;
+        private readonly RequestHandler _requestHandler;
 
-        public CollectionApi(IRequestHandler requestHandler)
+        internal CollectionApi(RequestHandler requestHandler)
         {
             _requestHandler = requestHandler;
         }

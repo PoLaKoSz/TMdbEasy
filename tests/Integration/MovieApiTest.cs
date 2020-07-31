@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
-using TmdbEasy.Apis;
 using TmdbEasy.DTO.Images;
 using TmdbEasy.DTO.Movies;
 using TmdbEasy.Interfaces;
@@ -15,9 +14,7 @@ namespace TmdbEasy.Tests.Integration
         [TestCase(505)]
         public async Task GetDetailsAsync_ValidId_CustomApiKey_ReturnsValidResult(int id)
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IMovieApi apiUnderTest = new MovieApi(_requestHandler);
+            IMovieApi apiUnderTest = _clientWithNoApiKey.Movie;
 
             MovieFullDetails result = await apiUnderTest.GetDetailsAsync(id, apiKey: _userApiKey);
 
@@ -28,9 +25,7 @@ namespace TmdbEasy.Tests.Integration
         [TestCase(550)]
         public async Task GetImagesAsync_IncorrectId_ThrowsException(int id)
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IMovieApi apiUnderTest = new MovieApi(_requestHandler);
+            IMovieApi apiUnderTest = _clientWithNoApiKey.Movie;
 
             Images result = await apiUnderTest.GetImagesAsync(id, _userApiKey);
 
@@ -41,9 +36,7 @@ namespace TmdbEasy.Tests.Integration
         [TestCase(550)]
         public async Task GetAlternativetitlesAsync_IncorrectId_ThrowsException(int id)
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IMovieApi apiUnderTest = new MovieApi(_requestHandler);
+            IMovieApi apiUnderTest = _clientWithNoApiKey.Movie;
 
             AlternativeTitle result = await apiUnderTest.GetAlternativeTitlesAsync(id, apiKey: _userApiKey);
 
@@ -54,9 +47,7 @@ namespace TmdbEasy.Tests.Integration
         [TestCase("Brad Pitt")]
         public async Task SearchByActorAsync_FamousActor_ReturnResults(string actorName)
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IMovieApi apiUnderTest = new MovieApi(_requestHandler);
+            IMovieApi apiUnderTest = _clientWithNoApiKey.Movie;
 
             MovieList result = await apiUnderTest.SearchByActorAsync(actorName, apiKey: _userApiKey);
 

@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
-using TmdbEasy.Apis;
 using TmdbEasy.DTO.Images;
 using TmdbEasy.DTO.Other;
 using TmdbEasy.Tests.Integration.TestFixtures;
@@ -15,9 +14,7 @@ namespace TmdbEasy.Tests.Integration
         [TestCase(10)]
         public async Task GetDetailsAsync_ValidId_ReturnsValidResult(int id)
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            ICollectionApi apiUnderTest = new CollectionApi(_requestHandler);
+            ICollectionApi apiUnderTest = _clientWithNoApiKey.Collection;
 
             Collections collections = await apiUnderTest.GetDetailsAsync(id, _userApiKey);
 
@@ -29,9 +26,7 @@ namespace TmdbEasy.Tests.Integration
         [TestCase(10)]
         public async Task GetImagesAsync_ValidId_ReturnsValidResult(int id)
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            ICollectionApi apiUnderTest = new CollectionApi(_requestHandler);
+            ICollectionApi apiUnderTest = _clientWithNoApiKey.Collection;
 
             Images images= await apiUnderTest.GetImagesAsync(id, _userApiKey);
 

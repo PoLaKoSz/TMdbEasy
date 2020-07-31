@@ -4,11 +4,11 @@ using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Apis
 {
-    public class NetworksApi : INetworksApi
+    internal class NetworksApi : INetworksApi
     {
-        private readonly IRequestHandler _requestHandler;
+        private readonly RequestHandler _requestHandler;
 
-        public NetworksApi(IRequestHandler requestHandler)
+        internal NetworksApi(RequestHandler requestHandler)
         {
             _requestHandler = requestHandler;
         }

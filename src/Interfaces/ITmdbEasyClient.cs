@@ -1,6 +1,5 @@
 using System.Net.Http;
 using TmdbEasy.Configurations;
-using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Interfaces
 {

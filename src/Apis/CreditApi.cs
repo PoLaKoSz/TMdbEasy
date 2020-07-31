@@ -4,11 +4,11 @@ using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Apis
 {
-    public class CreditApi : ICreditApi
+    internal class CreditApi : ICreditApi
     {
-        private readonly IRequestHandler _requestHandler;
+        private readonly RequestHandler _requestHandler;
 
-        public CreditApi(IRequestHandler requestHandler)
+        internal CreditApi(RequestHandler requestHandler)
         {
             _requestHandler = requestHandler;
         }

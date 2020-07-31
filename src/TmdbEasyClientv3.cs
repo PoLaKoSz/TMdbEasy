@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net.Http;
-using System.Threading.Tasks;
 using TmdbEasy.Apis;
 using TmdbEasy.Configurations;
 using TmdbEasy.Interfaces;
@@ -19,15 +18,14 @@ namespace TmdbEasy
 
         public TmdbEasyClientv3(TmdbEasyOptions options, IJsonDeserializer jsonDeserializer)
         {
-            if (options == null)
-                throw new ArgumentNullException(nameof(options));
+            Options = options ?? throw new ArgumentNullException(nameof(options));
 
             var httpClient = new HttpClient()
             {
-                BaseAddress = new Uri(options.UseSsl ? _tmdbUrl3Ssl : _tmdbUrl3)
+                BaseAddress = new Uri(Options.UseSsl ? _tmdbUrl3Ssl : _tmdbUrl3)
             };
 
-            var requestHandler = new RequestHandler(options, httpClient, jsonDeserializer);
+            var requestHandler = new RequestHandler(Options, httpClient, jsonDeserializer);
 
             Changes = new ChangesApi(requestHandler);
             Collection = new CollectionApi(requestHandler);
@@ -49,5 +47,9 @@ namespace TmdbEasy
         public INetworksApi Networks { get; }
         public IReviewApi Review { get; }
         public ITelevisionApi Television { get; }
+
+        public TmdbEasyOptions Options { get; }
+        public HttpClient HttpClient  { get; }
+        public IJsonDeserializer JsonDeserializer  { get; }
     }
 }

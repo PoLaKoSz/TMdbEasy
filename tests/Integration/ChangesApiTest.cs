@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
-using TmdbEasy.Apis;
 using TmdbEasy.DTO.Changes;
 using TmdbEasy.Enums;
 using TmdbEasy.Tests.Integration.TestFixtures;
@@ -15,9 +14,7 @@ namespace TmdbEasy.Tests.Integration
         [Test]
         public async Task GetChangeListAsync_SpecificDateRange_ReturnsChangeList()
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IChangesApi apiUnderTest = new ChangesApi(_requestHandler);
+            IChangesApi apiUnderTest = _clientWithNoApiKey.Changes;
 
             ChangeList changeList = await apiUnderTest.GetChangeListAsync(ChangeType.Movie, "26/07/2020", "25/07/2020", 1, _userApiKey);
 
@@ -28,9 +25,7 @@ namespace TmdbEasy.Tests.Integration
         [Test]
         public async Task GetChangeListAsync_SpecificType_ReturnsChangeList()
         {
-            var _requestHandler = new RequestHandler(_clientWithNoApiKey);
-
-            IChangesApi apiUnderTest = new ChangesApi(_requestHandler);
+            IChangesApi apiUnderTest = _clientWithNoApiKey.Changes;
 
             ChangeList changeList = await apiUnderTest.GetChangeListAsync(ChangeType.TV, "26/07/2020", "25/07/2020", 1, _userApiKey);
 

@@ -21,7 +21,7 @@ namespace TmdbEasy
 
             serviceCollection.TryAdd(sessionDescriptor);
 
-            serviceCollection.AddScoped<IRequestHandler, RequestHandler>();
+            serviceCollection.AddScoped<RequestHandler, RequestHandler>();
             serviceCollection.AddScoped<IJsonDeserializer, NewtonSoftDeserializer>();
 
             serviceCollection.AddScoped<IReviewApi, ReviewApi>();

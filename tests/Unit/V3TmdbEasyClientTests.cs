@@ -20,7 +20,7 @@ namespace TmdbEasy.Tests.Unit
         {
             TmdbEasyOptions options = null;
 
-            Assert.Throws<ArgumentNullException>(() => new TmdbEasyClientv3(_jsonDeserializer, options));
+            Assert.Throws<ArgumentNullException>(() => new TmdbEasyClientv3(options, _jsonDeserializer));
         }
     }
 }

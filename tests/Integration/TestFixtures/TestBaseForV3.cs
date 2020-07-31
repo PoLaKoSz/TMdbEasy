@@ -8,8 +8,8 @@ namespace TmdbEasy.Tests.Integration.TestFixtures
     public abstract class TestBaseForV3
     {
         private const string ApiKeyVariableName = "tmdbapikey";
-        protected readonly ITmdbEasyClient _clientWithNoApiKey;
-        protected readonly ITmdbEasyClient _clientWithApiKey;
+        protected readonly ITmdbEasyClientv3 _clientWithNoApiKey;
+        protected readonly ITmdbEasyClientv3 _clientWithApiKey;
 
         protected TestBaseForV3()
         {
@@ -20,11 +20,11 @@ namespace TmdbEasy.Tests.Integration.TestFixtures
 
         public readonly string _userApiKey;
 
-        public ITmdbEasyClient GetTestV3Client(string sharedApiKey = null)
+        public ITmdbEasyClientv3 GetTestV3Client(string sharedApiKey = null)
         {
             var jsonSerializer = new NewtonSoftDeserializer();
 
-            return new TmdbEasyClientv3(jsonSerializer, GetDefaultOptions(sharedApiKey));
+            return new TmdbEasyClientv3(GetDefaultOptions(sharedApiKey), jsonSerializer);
         }
 
         public TmdbEasyOptions GetDefaultOptions(string sharedApiKey)

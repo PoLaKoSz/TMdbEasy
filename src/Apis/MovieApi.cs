@@ -10,11 +10,11 @@ using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Apis
 {
-    public class MovieApi : IMovieApi
+    internal class MovieApi : IMovieApi
     {
-        private readonly IRequestHandler _requestHandler;
+        private readonly RequestHandler _requestHandler;
 
-        public MovieApi(IRequestHandler requestHandler)
+        internal MovieApi(RequestHandler requestHandler)
         {
             _requestHandler = requestHandler;
         }
@@ -114,7 +114,7 @@ namespace TmdbEasy.Apis
                .AddUrlSegment("movie")
                .AddUrlSegment($"{movieId}")
                .AddUrlSegment("videos")
-   
+
                .AddApiKey(apiKey);
 
             return await _requestHandler.ExecuteAsync<VideoList>(restRequest);

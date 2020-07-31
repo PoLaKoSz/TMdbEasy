@@ -4,11 +4,11 @@ using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Apis
 {
-    public class ReviewApi : IReviewApi
+    internal class ReviewApi : IReviewApi
     {
-        private readonly IRequestHandler _requestHandler;
+        private readonly RequestHandler _requestHandler;
 
-        public ReviewApi(IRequestHandler requestHandler)
+        internal ReviewApi(RequestHandler requestHandler)
         {
             _requestHandler = requestHandler;
         }
