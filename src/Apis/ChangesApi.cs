@@ -6,7 +6,7 @@ using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Apis
 {
-    public class ChangesApi : IChangesApi
+    internal class ChangesApi : IChangesApi
     {
         private readonly IRequestHandler _requestHandler;
 

@@ -1,14 +1,13 @@
-﻿using System.Threading.Tasks;
+using System.Net.Http;
 using TmdbEasy.Configurations;
+using TmdbEasy.Interfaces;
 
 namespace TmdbEasy.Interfaces
 {
-    public interface ITmdbEasyClient
+    internal interface ITmdbEasyClient
     {
         TmdbEasyOptions Options { get; }
-
-        ApiVersion GetVersion();
-
-        Task<TmdbEasyModel> GetResponseAsync<TmdbEasyModel>(string query);
+        HttpClient HttpClient { get; }
+        IJsonDeserializer JsonDeserializer { get; }
     }
 }

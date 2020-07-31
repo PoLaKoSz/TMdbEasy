@@ -15,7 +15,7 @@ namespace TmdbEasy
                     {
                         var jsonDeserializer = c.GetService<IJsonDeserializer>();
 
-                        return new TmdbEasyClientv3(jsonDeserializer, options);
+                        return new TmdbEasyClientv3(options, jsonDeserializer);
 
                     }, ServiceLifetime.Singleton);
 
